@@ -133,7 +133,7 @@ summary_writer = tf.summary.FileWriter(FLAGS.train_dir,
 
 到这里为止，才能成功的运行这个例子，上述错误都是由于tf高低版本不兼容导致的，代码本身没有问题，只是在高版本的tf做了修改，比如本机的版本是1.7.0，某些低版本应该没有问题。
 
+https://www.cnblogs.com/cvtoEyes/p/8981994.html
 
 
-[代码解析]: https://www.cnblogs.com/cvtoEyes/p/8981994.html
 
