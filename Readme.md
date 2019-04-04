@@ -119,7 +119,7 @@ __13. WARNING:tensorflow:Passing a `GraphDef` to the SummaryWriter is deprecated
 
 这个警告来自于cifar10_train.py的
 
-```
+```python
 summary_writer = tf.summary.FileWriter(FLAGS.train_dir,
                                             graph_def=sess.graph_def)
 ```
@@ -136,4 +136,38 @@ summary_writer = tf.summary.FileWriter(FLAGS.train_dir,
 https://www.cnblogs.com/cvtoEyes/p/8981994.html
 
 
+
+## About Warning
+
+1.
+
+```
+import os
+
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+```
+
+2.将
+
+```
+saver = tf.train.Saver(tf.all_variables())
+```
+
+修改为
+
+```
+saver = tf.train.Saver(tf.global_variables())
+```
+
+3.将
+
+```
+init = tf.initialize_all_variables()
+```
+
+修改为
+
+```
+init = tf.global_variables_initializer()
+```
 
